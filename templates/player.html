@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouMotion Player</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="player-container">
+        <!-- YouTube Player -->
+        <div class="video-section">
+            <div id="player"></div>
+        </div>
+
+        <!-- Webcam Section -->
+        <div class="webcam-section">
+            <video id="webcam" autoplay muted></video>
+            <canvas id="overlay"></canvas>
+        </div>
+    </div>
+
+    <!-- Gesture Feedback Overlay -->
+    <div id="gesture-feedback" class="feedback-overlay"></div>
+
+    <!-- Scripts -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='player.js') }}"></script>
+
+    <script>
+        // Pass video ID to JavaScript
+        const videoId = "{{ video_id }}";
+    </script>
+</body>
+</html>

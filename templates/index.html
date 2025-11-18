@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouMotion - Gesture-Controlled YouTube Player</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>YouMotion</h1>
+            <p>Control YouTube videos with hand gestures</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <form action="{{ url_for('player') }}" method="post" id="video-form">
+                    <div class="input-group">
+                        <label for="video_url">YouTube Video URL:</label>
+                        <input type="url" id="video_url" name="video_url"
+                               placeholder="https://www.youtube.com/watch?v=..."
+                               required>
+                    </div>
+                    <button type="submit" class="btn-primary">Start Controller</button>
+                </form>
+            </div>
+
+            <div class="instructions">
+                <h2>How to Use:</h2>
+                <ul>
+                    <li>Paste a YouTube video URL above</li>
+                    <li>Click "Start Controller" to begin</li>
+                    <li>Use hand gestures to control playback:
+                        <ul>
+                            <li>Raise right hand → Play</li>
+                            <li>Raise left hand → Pause</li>
+                            <li>Swipe right → Fast-forward 10s</li>
+                            <li>Swipe left → Rewind 10s</li>
+                            <li>Push forward → Volume up</li>
+                            <li>Pull back → Volume down</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

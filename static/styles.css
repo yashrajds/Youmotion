@@ -1,0 +1,209 @@
+/* Dark Modern Theme */
+:root {
+    --primary-bg: #1a1a1a;
+    --secondary-bg: #2d2d2d;
+    --accent-color: #ff6b35;
+    --text-color: #ffffff;
+    --text-secondary: #cccccc;
+    --border-color: #404040;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Index Page Styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.input-section {
+    background-color: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input[type="url"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+input[type="url"]:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #e55a2b;
+}
+
+.instructions {
+    background-color: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.instructions h2 {
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.instructions ul {
+    list-style-position: inside;
+    margin-left: 1rem;
+}
+
+.instructions li {
+    margin-bottom: 0.5rem;
+}
+
+.instructions ul ul {
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+}
+
+/* Player Page Styles */
+.player-container {
+    display: flex;
+    height: 100vh;
+    background-color: var(--primary-bg);
+}
+
+.video-section, .webcam-section {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#player {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#webcam {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    background-color: var(--secondary-bg);
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.webcam-section {
+    position: relative;
+}
+
+/* Feedback Overlay */
+.feedback-overlay {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.feedback-overlay.show {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .player-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .video-section, .webcam-section {
+        flex: none;
+        height: 50vh;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+}
